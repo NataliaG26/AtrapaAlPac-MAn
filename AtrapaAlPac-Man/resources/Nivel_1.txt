@@ -1,0 +1,8 @@
+#nivel
+1
+#radio	posX	posY	espera	direct	rebotes	quieto
+20	30	60	30	U	0	false
+30	60	30	15	R	0	false
+25	125	280	20	L	0	false
+35	350	100	20	D	0	false
+40	100	200	15	L	0	false

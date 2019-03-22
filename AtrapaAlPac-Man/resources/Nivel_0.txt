@@ -1,0 +1,7 @@
+#nivel
+0
+#radio	posX	posY	espera	direct	rebotes	quieto
+30	70	90	15	R	0	false
+40	120	120	25	L	0	false
+20	350	230	32	U	0	false
+40	280	30	30	D	0	false

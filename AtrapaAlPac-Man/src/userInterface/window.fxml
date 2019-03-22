@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <top>
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Juego">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#startGame" text="Empezar Juego" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveGame" text="Guardar Juego" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Salir" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ver">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#bestScores" text="Mejores Puntajes" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ayuda">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#aboutGame" text="Acerca del Juego" />
+              </items>
+            </Menu>
+         </menus></MenuBar>
+   </top>
+   <center>
+      <Pane fx:id="pane" onMouseClicked="#atrapaAlPacMan" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <left>
+      <HBox prefHeight="375.0" prefWidth="109.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Rebotes: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="counterTxt" text="0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </left>
+</BorderPane>
