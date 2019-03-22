@@ -92,7 +92,7 @@ public class SceneGame {
 		String info = " Nivel 0 \t #\t Nivel 1 \t #\t  Nivel 2\n";
 		for (int i = 0; i < hallDeLaFama.length; i++) {
 			for (int j = 0; j < hallDeLaFama[i].length; j++) {
-				info += hallDeLaFama[i][j] != null ? hallDeLaFama[i][j].getName()+"\t"+hallDeLaFama[i][j].getRebounds()+"\t" : "\t\t";
+				info += hallDeLaFama[i][j] != null ? hallDeLaFama[i][j].getName()+"\t"+hallDeLaFama[i][j].getRebounds()+"\t" : "\t\t\t";
 			}
 			info += "\n";
 		}
@@ -106,6 +106,7 @@ public class SceneGame {
 			recuperando.close();
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 	
@@ -175,12 +176,12 @@ public class SceneGame {
 		}
 	}
 	
-	public void newScore() {
+	public void newScore(String name) {
 		boolean agregado = false;
 		if(bestScores()) {
 			for (int i = 0; i < hallDeLaFama.length & !agregado; i++) {
 				if(hallDeLaFama[i][level] == null) {
-					hallDeLaFama[i][level] = new Score("player", level, counter);
+					hallDeLaFama[i][level] = new Score(name, level, counter);
 					agregado = true;
 				}
 			}
@@ -224,12 +225,6 @@ public class SceneGame {
 		counter = count;
 		return counter;
 	}
-	/**
-	 * 
-	 */
-	public void setRebounds() {
-		
-	}
 	
 	/**
 	 * 
@@ -244,12 +239,7 @@ public class SceneGame {
 	public double getWidth() {
 		return width;
 	}
-	/**
-	 * 
-	 */
-	public void setWidth(double width) {
-		this.width = width;
-	}
+
 	
 	/**
 	 * 

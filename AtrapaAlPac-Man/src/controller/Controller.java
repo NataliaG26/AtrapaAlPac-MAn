@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -31,7 +32,9 @@ public class Controller{
 	
 	@FXML
     private Label counterTxt;
-
+	
+	@FXML
+    private TextField nameTxF;
 	
 	/**
 	 * 
@@ -94,6 +97,7 @@ public class Controller{
 	 * 
 	 */
     void bestScores(ActionEvent event) {
+    	sceneGame.loadHallDeLaFama();
     	Alert al = new Alert(Alert.AlertType.INFORMATION);
 		al.setContentText(sceneGame.toStringHallDeLaFama());
 		al.show();
@@ -130,6 +134,7 @@ public class Controller{
 			//
 		}catch(Exception ioE){
 			Alert al = new Alert(Alert.AlertType.INFORMATION);
+			al.setTitle("problema");
 			al.setContentText("Problemas leyendo el archivo\nEs probable que el formato no sea válido.");
 			al.show();
 		}
@@ -140,7 +145,7 @@ public class Controller{
     	boolean stop = false;
     	if(pane.getChildren().isEmpty() || !sceneGame.pacMansStop()) {
     		stop = true;
-    		sceneGame.newScore();
+    		sceneGame.newScore(nameTxF.getText());
     		sceneGame.loadHallDeLaFama();
     	}
     	return stop;
